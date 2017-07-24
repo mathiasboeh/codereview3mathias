@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="codereview3mathias.css">
+</head>
+<body>
+
+<script>
+		
+document.writeln("<h2>Locations</h2>");
+	var loc = {
+		"London":[{
+    "officeLocation": "Fulham",
+    "latitude": 51.478942,
+    "longitude": -0.199148,
+    "weekend": "true",
+    
+    
+}], 
+"Glasgow": [{
+    "officeLocation": "Boden St",
+    "latitude": 55.846395,
+    "longitude": -4.219255,
+    "weekend": "true",
+    
+}], 
+"Belfast": [{
+    "officeLocation": "Holywood",
+    "latitude": 54.636892,
+    "longitude": -5.835139,
+    "weekend": "false",
+}]
+}
+
+var i = 0
+    document.writeln("<table border='2'><tr>");
+
+   for (i = 0; i < loc.London.length; i++) {
+        document.writeln("<td>");
+        document.writeln("<table border='1' width=100 >");
+        document.writeln("<tr><td><b>London</b></td><td width=50>" + loc.London[i].officeLocation + "</td></tr>");
+        document.writeln("<tr><td><b>latitude</b></td><td width=50>" + loc.London[i].latitude + "</td></tr>");
+        document.writeln("<tr><td><b>longitude</b></td><td width=50>" + loc.London[i].longitude + "</td></tr>");
+        document.writeln("<tr><td><b>weekend</b></td><td width=50>" + loc.London[i].weekend + "</td></tr>");
+        
+        document.writeln("</table>");
+        document.writeln("</td>");
+
+}
+for (i = 0; i < loc.Glasgow.length; i++) {
+        document.writeln("<td>");
+        document.writeln("<table border='1' width=100 >");
+        document.writeln("<tr><td><b>Glasgow</b></td><td width=50>" + loc.Glasgow[i].officeLocation + "</td></tr>");
+        document.writeln("<tr><td><b>latitude</b></td><td width=50>" + loc.Glasgow[i].latitude + "</td></tr>");
+        document.writeln("<tr><td><b>longitude</b></td><td width=50>" + loc.Glasgow[i].longitude + "</td></tr>");
+        document.writeln("<tr><td><b>weekend</b></td><td width=50>" + loc.Glasgow[i].weekend + "</td></tr>");
+        
+        document.writeln("</table>");
+        document.writeln("</td>");
+
+}
+for (i = 0; i < loc.Belfast.length; i++) {
+        document.writeln("<td>");
+        document.writeln("<table border='1' width=100 >");
+        document.writeln("<tr><td><b>Belfast</b></td><td width=50>" + loc.Belfast[i].officeLocation + "</td></tr>");
+        document.writeln("<tr><td><b>latitude</b></td><td width=50>" + loc.Belfast[i].latitude + "</td></tr>");
+        document.writeln("<tr><td><b>longitude</b></td><td width=50>" + loc.Belfast[i].longitude + "</td></tr>");
+        document.writeln("<tr><td><b>weekend</b></td><td width=50>" + loc.Belfast[i].weekend + "</td></tr>");
+        
+        document.writeln("</table>");
+        document.writeln("</td>");
+
+}
+
+function initMap() {
+            var myLatLng = {lat: 53.695667, lng: -2.064095};
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 6,
+              center: loca
+            });
+            markerArray=[];
+            for(i=0;i<loc.length;i++){
+            	var loca = {lat: loc[i].latitude, lng: loc[i].longitude};
+                var marker = new google.maps.Marker({
+                    position: loca,
+                    map: map,
+                    title: loc[i].officeLocation
+                });
+            }
+        }
+</script>
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtZpnK0EdHr5QXH_yriJrfeApdNbidJyA&callback=initMap">
+  </script>
+
+  <header id="header">
+        <h1>Richmond's IT Car Insurance</h1>
+
+        <nav>
+        	<a href="codereview3mathias.html">Home</a>
+        	<a href="crloc.html">Locations</a>
+        	<a href="form.html">Calculator</a>
+        </nav>
+    </header>
+</body>
+</html>

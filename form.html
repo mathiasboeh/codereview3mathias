@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="codereview3mathias.css">
+</head>
+<body>
+<header id="header">
+        <h1>Richmond's IT Car Insurance</h1>
+
+        <nav>
+        	<a href="codereview3mathias.html">Home</a>
+        	<a href="crloc.html">Locations</a>
+        	<a href="form.html">Calculator</a>
+        </nav>
+    </header>
+<div>
+<input type="text" id="name" placeholder="name"></input>
+<br>
+<input type="number" id="age" placeholder="age"></input>
+<br>
+<input type="number" id="horsepower" placeholder="horsepower"></input>
+<br>
+<p>gender: <select id="gender1" name="gender" placeholder="gender">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select></p>
+<br>
+<p>country: <select id="country1" name="country" placeholder="country">
+    <option value="England">England</option>
+    <option value="Wales">Wales</option>
+    <option value="Scotland">Scotland</option>
+    <option value="Northern Ireland">Northern Ireland</option>
+  </select></p>
+
+<br>
+<button onclick='clientInput();'>Submit</button>
+
+<p id="finalRate"></p>
+
+
+<script type="text/javascript">
+	class Client {constructor (name, age, gender, country, horsepower)
+	{
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+		this.country = country;
+		this.horsepower = horsepower; 
+	}
+	getName(){
+		return this.name;
+	}
+	getAge(){
+		return this.age;
+	}
+	getGender(){
+		return this.gender;
+	}
+	getCountry(){
+		return this.country;
+	}
+	getHorsepower(){
+		return this.horsepower;
+	}
+	setname(name){
+		this.name=name;
+	}
+	setname(age){
+		this.age=age;
+	}setname(gender){
+		this.gender=gender;
+	}setname(country){
+		this.country=country;
+	}setname(horsepower){
+		this.horsepower=horsepower;
+	}
+}
+
+function rateCalculator (name, age, gender, country, horsepower) {
+	clientRate = new Rate(name, age, gender, country, horsepower);
+	base = 100;
+	if (clientRate.getCountry() == "Scotland"){
+		base + 15;
+	}
+	
+
+}
+
+function clientInput(){
+	final = rateCalculator(document.getElementById("name").value, document.getElementById("age").value, document.getElementById("horsepower").value, document.getElementById("gender").value, document.getElementById("country").value);
+	document.getElementById("finalRate").innerHTML= "Your rate is "+final+ "Pound";}
+
+
+</script>
+</body>
+</html>
